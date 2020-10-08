@@ -10,6 +10,10 @@ class PlayersController < ApplicationController
         render json: player, include: [:cards]
     end
 
+    def create
+        
+    end
+
     def destroy
         player = Player.all.find_by(id: params[:id])
         player.destroy
