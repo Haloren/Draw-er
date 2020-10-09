@@ -1,0 +1,17 @@
+body {
+
+}
+
+header {
+    background-color: #7fffd4;
+    text-align: center;
+}
+
+main {
+    display: grid;
+
+}
+
+div.card {
+    border: 2px solid #000000;
+}
