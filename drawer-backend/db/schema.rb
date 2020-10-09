@@ -22,9 +22,9 @@ ActiveRecord::Schema.define(version: 2020_10_09_223642) do
 
   create_table "players", force: :cascade do |t|
     t.string "name"
+    t.integer "points"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "points"
   end
 
   add_foreign_key "cards", "players"
