@@ -19,4 +19,24 @@ main {
 div.card {
     border: 2px solid #000000;
     margin: auto;
+    text-align: center;
+    height: 100px;
+    width: 100px;
+}
+
+
+
+
+
+
+
+.rulesbtn {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+}
+.rules {
+    position: absolute;
+    top: 10px;
+    left: 10px;
 }

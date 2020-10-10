@@ -28,6 +28,12 @@ window.addEventListener('load', () =>{
     canvas.addEventListener('mousedown', startDraw);
     canvas.addEventListener('mouseup', endDraw);
     canvas.addEventListener('mousemove', draw);
+
+    //MAKE A BUTTON TO CLEAR THE CANVAS
+    // const button = document.createElement("button")
+    // button.setAttribute("class", "eraser")
+    // button.innerHTML = "Erase Canvas"
+    //context.clearRect(0,0, canvas.width, canvas.height);
 })
 // MAKE A FUNCTION TO RESPONSIVELY CHANGE THE SIZE OF THE CANVAS
 // window.addEventListener('resize, ')

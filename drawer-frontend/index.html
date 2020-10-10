@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drawer!</title>
     <link rel="stylesheet" href="style.css" type="text/css">
-    <script src="/drawer-frontend/src/index.js" charset="utf-8"></script>
+    <script defer src="/drawer-frontend/src/index.js" charset="utf-8"></script>
     <script src="/drawer-frontend/src/canvas.js"></script>
 </head>
 <header>
@@ -13,18 +13,16 @@
 <body>
     <main>
         <canvas></canvas>
-        
-        <div class="card" data-id="1">
-            <button> Delete Player </button>
-            <h3> Player Name </h3>
-            <button> Up </button>
-            <h2> Points </h2>
-            <button> Down </button>
-        </div>
-
+        <button id="startRound"> Start Round </button>
+        <button id="endRound"> End Round </button>
+        <div id="wordCard">|  Word Card 1  |  |  Word Card 2  |</div>
+        <button id="allWords"> Show All Words </button>
     </main>
 </body>
 <footer>
-
+    <button class="rulesbtn" onclick="showRules()">Rules/Help</button>
+    <article id="showRules" style="display: none" class="rules">
+        <p> Rules will Display here</p>
+    </article>
 </footer>
 </html>

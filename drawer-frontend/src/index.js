@@ -19,19 +19,11 @@ const loadPlayers = () => {
 }
 const renderPlayers = (playerList) => {
     console.log(playerList)
-    const div = document.createElement("div")
-    const p = document.createElement("p")
-
-    div.setAttribute("class", "card")
-    div.setAttribute("data-id", playerList.id)
-
-    p.innerHTML = playerList.name
-
 }
 
 
-//CARDS
-document.addEventListener("DOMContentLoaded", () => loadCards())
+//SHOW ALL CARDS
+document.getElementById("allWords").addEventListener("click", () => loadCards())
 
 const loadCards = () => {
     fetch(CARDS_URL)
@@ -42,4 +34,24 @@ const loadCards = () => {
 }
 const renderCards = (cardList) => {
     console.log(cardList)
+    const div = document.createElement("div")
+    div.setAttribute("class", "card")
+    div.setAttribute("data-id", cardList.id)
+
+    const p = document.createElement("p")
+    p.innerHTML = cardList.content
+
+    div.appendChild(p)
+    main.appendChild(div)
+}
+
+
+//HELP & GAME RULES
+const showRules = () => {
+    let hide = document.getElementById("showRules");
+    if (hide.style.display === "none") {
+        hide.style.display = "flex";
+    } else {
+        hide.style.display = "none"
+    }
 }
