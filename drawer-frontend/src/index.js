@@ -18,6 +18,14 @@ const loadPlayers = () => {
     })
 }
 const renderPlayers = (playerList) => {
+    console.log(playerList)
+    const div = document.createElement("div")
+    const p = document.createElement("p")
+
+    div.setAttribute("class", "card")
+    div.setAttribute("data-id", playerList.id)
+
+    p.innerHTML = playerList.name
 
 }
 
@@ -33,5 +41,5 @@ const loadCards = () => {
     })
 }
 const renderCards = (cardList) => {
-    
+    console.log(cardList)
 }
