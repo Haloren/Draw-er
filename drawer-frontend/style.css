@@ -96,7 +96,7 @@ main.end-time {
     .cards-container:hover {
         background-color: var(--black);
     }
-.card {
+.game-card {
     border: 2px var(--black);
     border-radius: 2px;
     display: grid;
@@ -113,11 +113,17 @@ main.end-time {
     margin: 5px;
     padding: 10px;
 }
-    .all-words:hover {
-        border: 2px var(--black);
+    .all-words.button {
         cursor: pointer;
     }
-
+        .all-words.button:hover {
+            border: 2px var(--black);
+        }
+.word {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 
 /* RULES AND HELP */
@@ -126,7 +132,7 @@ main.end-time {
     cursor: pointer;
     top: 10px;
     left: 10px;
-    z-index: 99;
+    z-index: 5;
     background: var(--blue);
     color: var(--white);
     border-radius: 5px;

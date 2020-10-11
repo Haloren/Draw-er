@@ -42,15 +42,15 @@ const loadCards = () => {
 }
 const renderCards = (cardList) => {
     console.log(cardList)
-    const div = document.createElement("div")
-    div.setAttribute("class", "card")
-    div.setAttribute("data-id", cardList.id)
+    const ul = document.createElement("ul")
+    ul.setAttribute("class", "card-list")
 
-    const p = document.createElement("p")
-    p.innerHTML = cardList.content
+    const li = document.createElement("li")
+    li.setAttribute("data-id", cardList.id)
+    li.innerHTML = cardList.content
 
-    div.appendChild(p)
-    main.appendChild(div)
+    ul.appendChild(li)
+    main.appendChild(ul)
 }
 
 //PLAYERS
