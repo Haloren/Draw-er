@@ -44,7 +44,7 @@ main {
 main.start-time {
     --neutral: var(--green)
 }
-main.end-time {
+main.stop-time {
     --neutral: var(--red)
 }
 
@@ -64,13 +64,13 @@ main.end-time {
         background-color: var(--white);
         color: var(--green);
     }
-.end-btn {
+.stop-btn {
     border: var(--white);
     background-color: var(--red);
     outline: none;
     box-shadow: 0px 2px 2px 0px;
 }
-    .end-btn:hover {
+    .stop-btn:hover {
         background-color: var(--white);
         color: var(--red);
     }

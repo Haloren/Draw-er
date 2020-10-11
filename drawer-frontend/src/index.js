@@ -16,14 +16,14 @@ const showRules = () => {
 
 //GAME CONTROLS
 const startButton = document.getElementById("start-btn")
-const endButton = document.getElementById("end-btn")
+const stopButton = document.getElementById("stop-btn")
 
 startButton.addEventListener('click', startGame)
 function startGame() {
     console.log("start")
 }
-
-function endGame() {
+stopButton = document
+function stopGame() {
 
 }
 
