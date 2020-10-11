@@ -2,11 +2,6 @@ body {
     column-count: 2;
 }
 
-header {
-    background-color: #7fffd4;
-    text-align: center;
-}
-
 canvas {
     border: 2px solid #000000;
     cursor: grab; /* nw-resize */
@@ -16,27 +11,36 @@ main {
     display: grid;
 }
 
-div.card {
+.start-btn {
+
+}
+
+.end-btn {
+
+}
+
+.cards-container {
+    column-count: 2;
     border: 2px solid #000000;
     margin: auto;
     text-align: center;
     height: 100px;
-    width: 100px;
+    width: 400px;
 }
+.flip-btn {
 
-
-
-
-
+}
 
 
 .rulesbtn {
     position: absolute;
-    top: 2px;
-    left: 2px;
+    cursor: pointer;
+    bottom: 10px;
+    left: 15px;
+    z-index: 99;
 }
 .rules {
     position: absolute;
-    top: 10px;
-    left: 10px;
+    bottom: 20px;
+    left: 20px;
 }

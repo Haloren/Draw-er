@@ -30,10 +30,11 @@ window.addEventListener('load', () =>{
     canvas.addEventListener('mousemove', draw);
 
     //MAKE A BUTTON TO CLEAR THE CANVAS
+    // document.getElementById("canvas")
     // const button = document.createElement("button")
     // button.setAttribute("class", "eraser")
     // button.innerHTML = "Erase Canvas"
-    //context.clearRect(0,0, canvas.width, canvas.height);
+    // context.clearRect(0,0, canvas.width, canvas.height);
 })
 // MAKE A FUNCTION TO RESPONSIVELY CHANGE THE SIZE OF THE CANVAS
 // window.addEventListener('resize, ')
