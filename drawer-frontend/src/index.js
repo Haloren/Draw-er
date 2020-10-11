@@ -4,36 +4,34 @@ const PLAYERS_URL = `${BASE_URL}/players`
 
 const main = document.querySelector("main")
 
-//PLAYERS
-document.addEventListener("DOMContentLoaded", () => loadPlayers())
-
-const loadPlayers = () => {
-    fetch(PLAYERS_URL)
-    .then(resp => resp.json())
-    // .then(json => {
-    //     console.log(json)
-    // })
-    .then(json => {
-        json.forEach(player => renderPlayers(player))
-    })
-}
-const renderPlayers = (playerList) => {
-    console.log(playerList)
+//HELP & GAME RULES
+const showRules = () => {
+    let hide = document.getElementById("showRules");
+    if (hide.style.display === "none") {
+        hide.style.display = "flex";
+    } else {
+        hide.style.display = "none"
+    }
 }
 
 //GAME CONTROLS
-function startGame() {
+const startButton = document.getElementById("start-btn")
+const endButton = document.getElementById("end-btn")
 
+startButton.addEventListener('click', startGame)
+function startGame() {
+    console.log("start")
 }
 
 function endGame() {
-    
+
 }
 
 //GAME CARDS (card-container)
+const cardsContainer = document.getElementById("cards-container")
 
 //SHOW ALL CARDS
-document.getElementById("allWords").addEventListener("click", () => loadCards())
+document.getElementById("all-words").addEventListener("click", () => loadCards())
 
 const loadCards = () => {
     fetch(CARDS_URL)
@@ -55,13 +53,19 @@ const renderCards = (cardList) => {
     main.appendChild(div)
 }
 
+//PLAYERS
+document.addEventListener("DOMContentLoaded", () => loadPlayers())
 
-//HELP & GAME RULES
-const showRules = () => {
-    let hide = document.getElementById("showRules");
-    if (hide.style.display === "none") {
-        hide.style.display = "flex";
-    } else {
-        hide.style.display = "none"
-    }
+const loadPlayers = () => {
+    fetch(PLAYERS_URL)
+    .then(resp => resp.json())
+    // .then(json => {
+    //     console.log(json)
+    // })
+    .then(json => {
+        json.forEach(player => renderPlayers(player))
+    })
+}
+const renderPlayers = (playerList) => {
+    console.log(playerList)
 }

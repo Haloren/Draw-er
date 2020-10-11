@@ -4,7 +4,7 @@
 /* COLOR PALETTE*/
 :root {
     --white: #ECE7EE;
-    --black: #230338;
+    --black: #030b38;
     --green: #27a361; 
     --red: #a01031;
     --blue: #006fca;
@@ -21,7 +21,7 @@ body {
 /* DRAWING CANVAS */
 canvas {
     border: 2px solid var(--black);
-    cursor: grab; /* nw-resize */
+    cursor: grab;
     background: var(--white);
 }
 
@@ -36,6 +36,10 @@ main {
     background: var(--neutral);
 }
 
+.not-canvas {
+    margin-left: auto;
+    margin-right: auto;
+}
 /* TIMER START AND TIMES UP */
 main.start-time {
     --neutral: var(--green)
@@ -47,6 +51,8 @@ main.end-time {
 /* GAME CONTROLS */
 .game-controls {
     text-align: center;
+    margin: 5px;
+    padding: 10px;
 }
 .start-btn {
     border: var(--white);
@@ -68,14 +74,14 @@ main.end-time {
         background-color: var(--white);
         color: var(--red);
     }
-.all-words {
+.new-words {
     border: var(--white);
     background-color: var(--white);
     color: var(--black);
     outline: none;
     box-shadow: 0px 2px 2px 0px;
 }
-    .all-words:hover {
+    .new-words:hover {
         color: var(--blue);
     }
 
@@ -101,6 +107,19 @@ main.end-time {
     margin: 30px 0;
 }
 
+/* SHOW ALL CARDS */
+.all-words {
+    text-align: center;
+    margin: 5px;
+    padding: 10px;
+}
+    .all-words:hover {
+        border: 2px var(--black);
+        cursor: pointer;
+    }
+
+
+
 /* RULES AND HELP */
 .rulesbtn {
     position: absolute;
@@ -112,6 +131,10 @@ main.end-time {
     color: var(--white);
     border-radius: 5px;
 }
+    .rulesbtn:hover {
+        background-color: var(--white);
+        color: var(--blue);
+    }
 .rules {
     position: absolute;
     top: 20px;
