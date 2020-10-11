@@ -1,46 +1,120 @@
+/* GOOGLE FONT */
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+/* COLOR PALETTE*/
+:root {
+    --white: #ECE7EE;
+    --black: #230338;
+    --green: #27a361; 
+    --red: #a01031;
+    --blue: #006fca;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: 'Permanent Marker', cursive;
+}
+
 body {
     column-count: 2;
 }
-
+/* DRAWING CANVAS */
 canvas {
-    border: 2px solid #000000;
+    border: 2px solid var(--black);
     cursor: grab; /* nw-resize */
+    background: var(--white);
 }
 
 main {
-    display: grid;
+    --neutral: var(--blue);
+    padding: 0;
+    margin: 0;
+    display: flex;
+    width: 100vw;
+    height: 100vw;
+    justify-content: right;
+    background: var(--neutral);
 }
 
-.start-btn {
-
+/* TIMER START AND TIMES UP */
+main.start-time {
+    --neutral: var(--green)
+}
+main.end-time {
+    --neutral: var(--red)
 }
 
-.end-btn {
-
-}
-
-.cards-container {
-    column-count: 2;
-    border: 2px solid #000000;
-    margin: auto;
+/* GAME CONTROLS */
+.game-controls {
     text-align: center;
-    height: 100px;
+}
+.start-btn {
+    border: var(--white);
+    background-color: var(--green);
+    outline: none;
+    box-shadow: 0px 2px 2px 0px;
+}
+    .start-btn:hover {
+        background-color: var(--white);
+        color: var(--green);
+    }
+.end-btn {
+    border: var(--white);
+    background-color: var(--red);
+    outline: none;
+    box-shadow: 0px 2px 2px 0px;
+}
+    .end-btn:hover {
+        background-color: var(--white);
+        color: var(--red);
+    }
+.all-words {
+    border: var(--white);
+    background-color: var(--white);
+    color: var(--black);
+    outline: none;
+    box-shadow: 0px 2px 2px 0px;
+}
+    .all-words:hover {
+        color: var(--blue);
+    }
+
+/* DISPLAYED GAME CARDS */
+.cards-container {
+    height: 200px;
     width: 400px;
+    padding: 10px;
+    background-color: var(--white);
+    border-radius: 5px;
 }
-.flip-btn {
-
+    .cards-container:hover {
+        background-color: var(--black);
+    }
+.card {
+    border: 2px var(--black);
+    border-radius: 2px;
+    display: grid;
+    text-align: center;
+    background-color: var(--white);
+    box-shadow: 0 0 10px 1px;
+    padding: 10px;
+    margin: 30px 0;
 }
 
-
+/* RULES AND HELP */
 .rulesbtn {
     position: absolute;
     cursor: pointer;
-    bottom: 10px;
-    left: 15px;
+    top: 10px;
+    left: 10px;
     z-index: 99;
+    background: var(--blue);
+    color: var(--white);
+    border-radius: 5px;
 }
 .rules {
     position: absolute;
-    bottom: 20px;
+    top: 20px;
     left: 20px;
+    color: var(--blue);
 }

@@ -21,6 +21,16 @@ const renderPlayers = (playerList) => {
     console.log(playerList)
 }
 
+//GAME CONTROLS
+function startGame() {
+
+}
+
+function endGame() {
+    
+}
+
+//GAME CARDS (card-container)
 
 //SHOW ALL CARDS
 document.getElementById("allWords").addEventListener("click", () => loadCards())

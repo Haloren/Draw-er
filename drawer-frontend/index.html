@@ -13,20 +13,19 @@
 <body>
     <main>
         <canvas id="canvas"></canvas>
-        
-        <div class="gameControls">
-            <button id="start-btn" class="start-btn btn"> Start</button>
-            <button id="end-btn" class="end-btn btn hide"> End/Reveal</button>
-        </div>
-        
-        <div id="cards-container" class="cards-container hide">
-            <div id="cards-grid" class="flip-btn">
-                <div id="card-one">Card One</div>
-                <div id="card-two">Card Two</div>
-            </div>
-        </div>
         <div>
-            <button id="allWords"> Show All Words </button>
+            <div class="game-controls">
+                <button id="start-btn" class="start-btn btn"> Start</button>
+                <button id="end-btn" class="end-btn btn hide"> End/Reveal</button>
+                <button id="allWords" class="all-words"> Show All Words </button>
+            </div>
+
+            <div id="cards-container" class="cards-container hide">
+                <div id="cards-grid">
+                    <div id="card-one" class="card">Card One</div>
+                    <div id="card-two" class="card">Card Two</div>
+                </div>
+            </div>
         </div>
         
     </main>
