@@ -107,18 +107,34 @@ main.stop-time {
     margin: 30px 0;
 }
 
-/* SHOW ALL CARDS */
-.all-words {
+/* ADMIN CONTROLS */
+.admin-controls {
+    text-align: center;
+    margin: 2px;
+    padding: 3px;
+}
+.add-player {
     text-align: center;
     margin: 5px;
     padding: 10px;
 }
-    .all-words.button {
+    .add-player:hover {
         cursor: pointer;
+        background-color: var(--black);
+        color: var(--white);
     }
-        .all-words.button:hover {
-            border: 2px var(--black);
-        }
+.show-words {
+    text-align: center;
+    margin: 5px;
+    padding: 10px;
+}
+    .show-words:hover {
+        cursor: pointer;
+        background-color: var(--black);
+        color: var(--white);
+    }
+
+/* LIST OF ALL WORDS  */
 .word {
     position: absolute;
     margin-left: auto;

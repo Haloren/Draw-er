@@ -14,9 +14,23 @@
     <main>
         <canvas id="canvas"></canvas>
         <div class="not-canvas">
+            <div id="admin-controls" class="admin-controls">
+                <button id="add-player" class="add-player"> Add Player </button>
+                <button id="show-words" class="show-words">Show All Cards</button>
+                    <div id="all-players" class="all-players">
+
+                    </div>
+                
+                    <div id="all-words" class="all-words hide">
+
+                    </div>
+            </div>
+            
+            <!-- PLAYERS BOARD WITH UP/DOWN POINTS BUTTON-->
+
             <div class="game-controls">
-                <button id="start-btn" class="start-btn btn"> Start </button>
-                <button id="stop-btn" class="stop-btn btn hide"> Stop </button>
+                <button id="start-btn" class="start-btn"> Start </button>
+                <button id="stop-btn" class="stop-btn hide"> Stop </button>
                 <button id="new-words" class="new-words"> Get New Words </button>
             </div>
 
@@ -27,11 +41,6 @@
                 </div>
             </div>
 
-            <div id="all-words" class="all-words">
-                <button>Show All Cards</button>
-            </div>
-
-            <!-- PLAYERS BOARD WITH UP/DOWN POINTS BUTTON-->
         </div>
     </main>
 </body>
