@@ -9,21 +9,29 @@
     <script src="/drawer-frontend/src/canvas.js"></script>
 </head>
 <header>
+    <button class="rulesbtn" onclick="showRules()">Rules/Help</button>
+    <article id="showRules" style="display: none" class="rules">
+        <p> Rules will Display here</p>
+    </article>
 </header>
 <body>
-    
-    <!-- <div class="all-words"></div> -->
-    
     <main>
         <canvas id="canvas"></canvas>
         <div class="not-canvas">
-            <div id="admin-controls" class="admin-controls">
+            
+            <div id="timer" class="timer">
+                <h1> 2 : 00 </h1>
+            </div>
+
+            <div id="new-player" class="new-player">
+                <form></form>
                 <button id="add-player" class="add-player"> Add Player </button>
-                <button id="show-words" class="show-words" onclick="showWords()">Show All Cards</button>
             </div>
 
             <div id="all-players" class="all-players">
-                <!-- PLAYERS BOARD WITH UP/DOWN POINTS BUTTON-->
+                <h1>Score Board</h1>
+                <button>Up</button>
+                <button>Down</button>
             </div>
 
             <div class="game-controls">
@@ -43,9 +51,6 @@
     </main>
 </body>
 <footer>
-    <button class="rulesbtn" onclick="showRules()">Rules/Help</button>
-    <article id="showRules" style="display: none" class="rules">
-        <p> Rules will Display here</p>
-    </article>
+    <div class="copyright"><small> &copy;2020 Drawer! </small></div>
 </footer>
 </html>

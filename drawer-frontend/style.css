@@ -40,16 +40,45 @@ main {
     display: none;
 }
 
-.all-words {
-    background-color: var(--white);
-    border: 2px solid;
-}
-
 .not-canvas {
     margin-left: auto;
     margin-right: auto;
     z-index: 5;
 }
+
+/* TIMER */
+.timer {
+    text-align: center;
+    color: var(--white);
+    box-shadow: 0 0 10px 1px;
+    border-radius: 5px;
+}
+
+/* NEW PLAYER */
+.new-player {
+    text-align: center;
+    margin: 2px;
+    padding: 3px;
+}
+.add-player {
+    text-align: center;
+    margin: 5px;
+    padding: 10px;
+}
+    .add-player:hover {
+        cursor: pointer;
+        background-color: var(--black);
+        color: var(--white);
+    }
+
+/* PLAYERS SCOREBOARD */
+.all-players {
+    border: 2px solid;
+    background-color: var(--white);
+    text-align: center;
+    border-radius: 5px;
+}
+
 /* TIMER START AND TIMES UP */
 main.start-time {
     --neutral: var(--green)
@@ -117,41 +146,6 @@ main.stop-time {
     margin: 30px 0;
 }
 
-/* ADMIN CONTROLS */
-.admin-controls {
-    text-align: center;
-    margin: 2px;
-    padding: 3px;
-}
-.add-player {
-    text-align: center;
-    margin: 5px;
-    padding: 10px;
-}
-    .add-player:hover {
-        cursor: pointer;
-        background-color: var(--black);
-        color: var(--white);
-    }
-.show-words {
-    text-align: center;
-    margin: 5px;
-    padding: 10px;
-}
-    .show-words:hover {
-        cursor: pointer;
-        background-color: var(--black);
-        color: var(--white);
-    }
-
-/* LIST OF ALL WORDS  */
-.word {
-    position: absolute;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-
 /* RULES AND HELP */
 .rulesbtn {
     position: absolute;
@@ -174,3 +168,11 @@ main.stop-time {
     color: var(--blue);
     background-color: var(--white);
 }
+
+.copyright {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    color: var(--white);
+    text-shadow:1px 1px 10px var(--black);
+  }

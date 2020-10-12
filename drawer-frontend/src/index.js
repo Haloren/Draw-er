@@ -2,7 +2,6 @@ const BASE_URL = "http://localhost:3000"
 const PLAYERS_URL = `${BASE_URL}/players`
 
 const main = document.querySelector("main")
-const body = document.querySelector("body")
 
 //GET ALL CARDS
 document.addEventListener("DOMContentLoaded", () => loadCards())
@@ -15,46 +14,10 @@ const loadCards = () => {
     })
 }
 const renderCards = (cardList) => {
-    const h1 = document.createElement("h1")
-    const div =document.createElement("div")
-    const ul = document.createElement("ul")
-    
-    h1.setAttribute("id", "show-words")
-    h1.setAttribute("class", "show-words")
-    h1.setAttribute("style", "display: none")
-    div.setAttribute("class", "all-words")
-    div.setAttribute("id", cardList.id)
-
-    div.appendChild(ul)
-    h1.appendChild(div)
-    body.appendChild(h1)
-
-    cardList.cards.forEach(content => renderWord(content))
-} 
-const renderWord = (content) => {
-    const ul = document.querySelector(`div[id="${content.player_id}"]`)
-    const li = document.createElement("li")
-    const button = document.createElement("button")
-
-    li.innerHTML = `${content.content}`
-    button.setAttribute("button", "delete")
-    button.setAttribute("id", content.id)
-    button.innerHTML = "Delete"
-
-    li.appendChild(button)
-    ul.appendChild(li)
-}
-//SHOW ALL WORDS - HIDE/SHOW ON CLICK 
-const showWords = () => {
-    let hide = document.getElementsById("show-words");
-    if (hide.style.display === "none") {
-        hide.style.display = "flex";
-    } else {
-        hide.style.display = "none"
-    }
+    console.log(cardList)
 } 
 
-//PLAYERS
+//GET ALL PLAYERS
 document.addEventListener("DOMContentLoaded", () => loadPlayers())
 
 const loadPlayers = () => {
@@ -68,8 +31,7 @@ const loadPlayers = () => {
     })
 }
 const renderPlayers = (playerList) => {
-    const h3 = document.createElement("h3")
-
+    console.log(playerList)
 }
 
 //GAME CONTROLS
@@ -86,7 +48,7 @@ function stopGame() {
     console.log("stop")
 }
 
-//GAME CARDS CONTAINER & TIMER (card-container)
+//GAME CARDS CONTAINER & TIMER (cards-container)
 const cardsContainer = document.getElementById("cards-container")
 
 //GET NEW WORDS FOR GAME CARDS
