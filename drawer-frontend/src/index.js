@@ -23,15 +23,13 @@ function startGame() {
     console.log("start")
 }
 
+stopButton.addEventListener('click', stopGame)
 function stopGame() {
-
+    console.log("stop")
 }
 
-//GAME CARDS (card-container)
+//GAME CARDS CONTAINER & TIMER (card-container)
 const cardsContainer = document.getElementById("cards-container")
-
-//GET NEW WORDS FOR GAME CARDS
-let randomWord
 
 //GET ALL CARDS
 document.addEventListener("DOMContentLoaded", () => loadCards())
@@ -58,6 +56,9 @@ const renderCards = (cardList) => {
 //SHOW ALL WORDS (ON CLICK) 
 const allWords = document.getElementById("all-words")
 
+//GET NEW WORDS FOR GAME CARDS
+let randomWord
+
 //PLAYERS
 document.addEventListener("DOMContentLoaded", () => loadPlayers())
 
@@ -75,7 +76,3 @@ const renderPlayers = (playerList) => {
     console.log(playerList)
 }
 
-//RESET GAME & PLAYERS
-function reset() {
-    stopButton.classList.add('hide')
-}
