@@ -37,7 +37,7 @@ main {
 }
 
 .hide {
-    /* display: none; */
+    display: none;
 }
 
 .all-words {
@@ -48,6 +48,7 @@ main {
 .not-canvas {
     margin-left: auto;
     margin-right: auto;
+    z-index: 5;
 }
 /* TIMER START AND TIMES UP */
 main.start-time {

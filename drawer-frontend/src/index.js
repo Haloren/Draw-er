@@ -1,5 +1,4 @@
 const BASE_URL = "http://localhost:3000"
-const CARDS_URL = `${BASE_URL}/cards`
 const PLAYERS_URL = `${BASE_URL}/players`
 
 const main = document.querySelector("main")
@@ -9,30 +8,51 @@ const body = document.querySelector("body")
 document.addEventListener("DOMContentLoaded", () => loadCards())
 
 const loadCards = () => {
-    fetch(CARDS_URL)
+    fetch(PLAYERS_URL)
     .then(resp => resp.json())
     .then(json => {
         json.forEach(card => renderCards(card))
     })
 }
 const renderCards = (cardList) => {
-    const div = document.createElement("div")
+    const h1 = document.createElement("h1")
+    const div =document.createElement("div")
     const ul = document.createElement("ul")
-    const button = document.createElement("button")
     
-    div.setAttribute("class", "all-words hide")
+    h1.setAttribute("id", "show-words")
+    h1.setAttribute("class", "show-words")
+    h1.setAttribute("style", "display: none")
+    div.setAttribute("class", "all-words")
     div.setAttribute("id", cardList.id)
 
-    button.setAttribute("delete-word", cardList.id)
-    button.innerHTML = "Delete"
-    //add eventListener for button click
-
     div.appendChild(ul)
-    div.appendChild(button)
-    body.appendChild(div)
+    h1.appendChild(div)
+    body.appendChild(h1)
+
+    cardList.cards.forEach(content => renderWord(content))
 } 
+const renderWord = (content) => {
+    const ul = document.querySelector(`div[id="${content.player_id}"]`)
+    const li = document.createElement("li")
+    const button = document.createElement("button")
+
+    li.innerHTML = `${content.content}`
+    button.setAttribute("button", "delete")
+    button.setAttribute("id", content.id)
+    button.innerHTML = "Delete"
+
+    li.appendChild(button)
+    ul.appendChild(li)
+}
 //SHOW ALL WORDS - HIDE/SHOW ON CLICK 
-const allWords = document.getElementById("all-words")
+const showWords = () => {
+    let hide = document.getElementsById("show-words");
+    if (hide.style.display === "none") {
+        hide.style.display = "flex";
+    } else {
+        hide.style.display = "none"
+    }
+} 
 
 //PLAYERS
 document.addEventListener("DOMContentLoaded", () => loadPlayers())

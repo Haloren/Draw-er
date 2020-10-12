@@ -12,14 +12,14 @@
 </header>
 <body>
     
-    <!-- <div class="all-words hide"></div> -->
+    <!-- <div class="all-words"></div> -->
     
     <main>
         <canvas id="canvas"></canvas>
         <div class="not-canvas">
             <div id="admin-controls" class="admin-controls">
                 <button id="add-player" class="add-player"> Add Player </button>
-                <button id="show-words" class="show-words">Show All Cards</button>
+                <button id="show-words" class="show-words" onclick="showWords()">Show All Cards</button>
             </div>
 
             <div id="all-players" class="all-players">
@@ -28,12 +28,12 @@
 
             <div class="game-controls">
                 <button id="start-btn" class="start-btn"> Start </button>
-                <button id="stop-btn" class="stop-btn hide"> Stop </button>
+                <button id="stop-btn" class="stop-btn"> Stop </button>
                 <button id="new-words" class="new-words"> Get New Words </button>
             </div>
 
             <div id="cards-container" class="cards-container">
-                <div id="cards-grid" class="cards-grid hide">
+                <div id="cards-grid" class="cards-grid">
                     <div id="card-one" class="game-card">Card One</div>
                     <div id="card-two" class="game-card">Card Two</div>
                 </div>
