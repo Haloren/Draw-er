@@ -18,12 +18,6 @@
 body {
     column-count: 2;
 }
-/* DRAWING CANVAS */
-canvas {
-    border: 2px solid var(--black);
-    cursor: grab;
-    background: var(--white);
-}
 
 main {
     --neutral: var(--blue);
@@ -36,8 +30,11 @@ main {
     background: var(--neutral);
 }
 
-.hide {
-    display: none;
+/* DRAWING CANVAS */
+canvas {
+    border: 2px solid var(--black);
+    cursor: grab;
+    background: var(--white);
 }
 
 .not-canvas {
@@ -87,8 +84,8 @@ main.stop-time {
     --neutral: var(--red)
 }
 
-/* GAME CONTROLS */
-.game-controls {
+/* TIMER CONTROLS */
+.timer-controls {
     text-align: center;
     margin: 5px;
     padding: 10px;
@@ -113,14 +110,21 @@ main.stop-time {
         background-color: var(--white);
         color: var(--red);
     }
-.new-words {
+
+/* GAME CONTROLS */
+.game-controls {
+    text-align: center;
+    margin: 5px;
+    padding: 10px;
+}
+.new-words, .end-game {
     border: var(--white);
     background-color: var(--white);
     color: var(--black);
     outline: none;
     box-shadow: 0px 2px 2px 0px;
 }
-    .new-words:hover {
+    .new-words:hover, .end-game:hover {
         color: var(--blue);
     }
 

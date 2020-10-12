@@ -3,21 +3,7 @@ const PLAYERS_URL = `${BASE_URL}/players`
 
 const main = document.querySelector("main")
 
-//GET ALL CARDS
-document.addEventListener("DOMContentLoaded", () => loadCards())
-
-const loadCards = () => {
-    fetch(PLAYERS_URL)
-    .then(resp => resp.json())
-    .then(json => {
-        json.forEach(card => renderCards(card))
-    })
-}
-const renderCards = (cardList) => {
-    console.log(cardList)
-} 
-
-//GET ALL PLAYERS
+//GET PLAYERS
 document.addEventListener("DOMContentLoaded", () => loadPlayers())
 
 const loadPlayers = () => {
@@ -33,6 +19,20 @@ const loadPlayers = () => {
 const renderPlayers = (playerList) => {
     console.log(playerList)
 }
+
+//GET WORD CARDS
+document.addEventListener("DOMContentLoaded", () => loadCards())
+
+const loadCards = () => {
+    fetch(PLAYERS_URL)
+    .then(resp => resp.json())
+    .then(json => {
+        json.forEach(card => renderCards(card))
+    })
+}
+const renderCards = (cardList) => {
+    console.log(cardList)
+} 
 
 //GAME CONTROLS
 const startButton = document.getElementById("start-btn")

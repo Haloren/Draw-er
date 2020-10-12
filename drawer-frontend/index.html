@@ -18,10 +18,6 @@
     <main>
         <canvas id="canvas"></canvas>
         <div class="not-canvas">
-            
-            <div id="timer" class="timer">
-                <h1> 2 : 00 </h1>
-            </div>
 
             <div id="new-player" class="new-player">
                 <form></form>
@@ -30,14 +26,16 @@
 
             <div id="all-players" class="all-players">
                 <h1>Score Board</h1>
-                <button>Up</button>
-                <button>Down</button>
+                <h2> Player Name 🔽 Points 🔼 </h2>
             </div>
 
-            <div class="game-controls">
+            <div id="timer" class="timer">
+                <h1> 2 : 00 </h1>
+            </div>
+
+            <div class="timer-controls">
                 <button id="start-btn" class="start-btn"> Start </button>
                 <button id="stop-btn" class="stop-btn"> Stop </button>
-                <button id="new-words" class="new-words"> Get New Words </button>
             </div>
 
             <div id="cards-container" class="cards-container">
@@ -45,6 +43,11 @@
                     <div id="card-one" class="game-card">Card One</div>
                     <div id="card-two" class="game-card">Card Two</div>
                 </div>
+            </div>
+
+            <div class="game-controls">
+                <button id="new-words" class="new-words"> Get New Words </button>
+                <button id="end-game" class="end-game">End Game</button>
             </div>
 
         </div>
