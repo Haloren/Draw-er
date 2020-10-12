@@ -42,7 +42,7 @@ const loadCards = () => {
     })
 }
 const renderCards = (cardList) => {
-    console.log(cardList)
+    // console.log(cardList)
     const ul = document.createElement("ul")
     ul.setAttribute("class", "card-list hide")
 
@@ -52,12 +52,23 @@ const renderCards = (cardList) => {
 
     ul.appendChild(li)
     main.appendChild(ul)
+    
+    //GET NEW WORDS FOR GAME CARDS
+    let randomCardOne = "Word One"
+    //cardList[Math.floor(Math.random() * cardList.length)];
+    let randomCardTwo = cardList.content
+
+    let cardOne = document.getElementById("card-one")
+    cardOne.innerHTML = randomCardOne 
+
+    let cardTwo = document.getElementById("card-two")
+    cardTwo.innerHTML = randomCardTwo
 }
+
+
+
 //SHOW ALL WORDS (ON CLICK) 
 const allWords = document.getElementById("all-words")
-
-//GET NEW WORDS FOR GAME CARDS
-let randomWord
 
 //PLAYERS
 document.addEventListener("DOMContentLoaded", () => loadPlayers())
