@@ -20,6 +20,20 @@ const renderPlayers = (playerList) => {
     console.log(playerList)
 }
 
+//TIMER & CONTROLS
+const startButton = document.getElementById("start-btn")
+const stopButton = document.getElementById("stop-btn")
+
+startButton.addEventListener('click', startTimer)
+function startTimer() {
+    console.log("start")
+}
+
+stopButton.addEventListener('click', stopTimer)
+function stopTimer() {
+    console.log("stop")
+}
+
 //GET WORD CARDS
 document.addEventListener("DOMContentLoaded", () => loadCards())
 
@@ -34,24 +48,9 @@ const renderCards = (cardList) => {
     console.log(cardList)
 } 
 
-//GAME CONTROLS
-const startButton = document.getElementById("start-btn")
-const stopButton = document.getElementById("stop-btn")
-
-startButton.addEventListener('click', startGame)
-function startGame() {
-    console.log("start")
-}
-
-stopButton.addEventListener('click', stopGame)
-function stopGame() {
-    console.log("stop")
-}
-
-//GAME CARDS CONTAINER & TIMER (cards-container)
+//GAME CARDS (cards-container)
 const cardsContainer = document.getElementById("cards-container")
 
-//GET NEW WORDS FOR GAME CARDS
 //Math for random - cardList[Math.floor(Math.random() * cardList.length)];
 let randomCardOne = "Word One"
 let randomCardTwo = "Word Two"
@@ -59,6 +58,11 @@ let cardOne = document.getElementById("card-one")
 cardOne.innerHTML = randomCardOne 
 let cardTwo = document.getElementById("card-two")
 cardTwo.innerHTML = randomCardTwo
+
+
+//GET NEW WORDS 
+
+//END GAME
 
 //HELP & GAME RULES
 const showRules = () => {
