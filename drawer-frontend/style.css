@@ -40,6 +40,11 @@ main {
     /* display: none; */
 }
 
+.all-words {
+    background-color: var(--white);
+    border: 2px solid;
+}
+
 .not-canvas {
     margin-left: auto;
     margin-right: auto;
