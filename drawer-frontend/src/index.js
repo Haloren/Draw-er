@@ -91,7 +91,9 @@ let renderCards = (cardList) => {
     const div2 = document.createElement("div")
 
     div.setAttribute("class", "game-card")
+    div.setAttribute("id", "game-card1")
     div2.setAttribute("class", "game-card")
+    div2.setAttribute("id", "game-card2")
     
     div.innerHTML = `${cardList[Math.floor(Math.random() * cardList.length)].content}` // json[0].player.name 
     div2.innerHTML = cardList[Math.floor(Math.random() * cardList.length)].content
@@ -110,7 +112,15 @@ const showWords  = () => {
     }
 }
 
-//GET NEW WORDS (re-run renderCards on button click)
+//GET NEW WORDS (clear & re-run loadCards on button click)
+const newWords = document.getElementById("new-words")
+
+newWords.addEventListener('click', function(){
+    console.log("new words")
+    document.getElementById("game-card1").replaceWith()
+    document.getElementById("game-card2").replaceWith()
+    loadCards()
+})
 
 //HELP & GAME RULES
 const showRules = () => {
