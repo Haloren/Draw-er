@@ -55,18 +55,15 @@ let renderCards = (cardList) => {
     const div = document.createElement("div")
 
     div.setAttribute("class", "game-card")
-
+    
     div.innerHTML = cardList.cards[Math.floor(Math.random() * cardList.cards.length)].content
 
     cardsContainer.appendChild(div)
 } 
 
-//Math for random - [Math.floor(Math.random() * cardList.cards.length)];
+//GET NEW WORDS (re-run renderCards on button click)
 
-
-//GET NEW WORDS 
-
-//END GAME
+//END GAME (destroy all players except first Player "Drawer")
 
 //HELP & GAME RULES
 const showRules = () => {
