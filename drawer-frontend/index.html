@@ -19,10 +19,17 @@
         <canvas id="canvas"></canvas>
         <div class="not-canvas">
 
-            <div id="new-player" class="new-player">
-                <form></form>
-                <button id="add-player" class="add-player"> Add Player </button>
-            </div>
+            <form id="new-player" class="new-player">
+                <label for="name"><small>Name:</small></label>
+                <br>
+                <input type="text" name="name">
+                <br>
+                <label for="card"><small>Add Word:</small></label>
+                <br>
+                <input type="text" name="card">
+                <br>
+                <input type="submit" class="add-player" value="Add Player">
+            </form>
 
             <div id="score-board" class="score-board">
                 <h1> Score Board </h1>

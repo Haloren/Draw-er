@@ -61,6 +61,7 @@ canvas {
     text-align: center;
     margin: 5px;
     padding: 10px;
+    font-size: 1rem;
 }
     .add-player:hover {
         cursor: pointer;
