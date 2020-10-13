@@ -79,20 +79,24 @@ const cardsContainer = document.getElementById("cards-grid")
 document.addEventListener("DOMContentLoaded", () => loadCards())
 
 const loadCards = () => {
-    fetch(PLAYERS_URL)
+    fetch(CARDS_URL)
     .then(resp => resp.json())
     .then(json => {
-        json.forEach(card => renderCards(card))
+        renderCards(json)
     })
 }
 let renderCards = (cardList) => {
     const div = document.createElement("div")
+    const div2 = document.createElement("div")
 
     div.setAttribute("class", "game-card")
+    div2.setAttribute("class", "game-card")
     
-    div.innerHTML = cardList.cards[Math.floor(Math.random() * cardList.cards.length)].content
+    div.innerHTML = cardList[Math.floor(Math.random() * cardList.length)].content
+    div2.innerHTML = cardList[Math.floor(Math.random() * cardList.length)].content
 
     cardsContainer.appendChild(div)
+    cardsContainer.appendChild(div2)
 } 
 
 //GET NEW WORDS (re-run renderCards on button click)
