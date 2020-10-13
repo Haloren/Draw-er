@@ -1,7 +1,7 @@
 const BASE_URL = "http://localhost:3000"
 const PLAYERS_URL = `${BASE_URL}/players`
 
-const main = document.querySelector("main")
+const player = document.querySelector("div div h2")
 
 //GET PLAYERS
 document.addEventListener("DOMContentLoaded", () => loadPlayers())
@@ -17,7 +17,11 @@ const loadPlayers = () => {
     })
 }
 const renderPlayers = (playerList) => {
-    console.log(playerList)
+    const p = document.createElement("p")
+    
+    p.innerHTML = `${playerList.name} - ${playerList.points}`
+
+    player.appendChild(p)
 }
 
 //TIMER & CONTROLS

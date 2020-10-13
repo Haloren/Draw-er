@@ -69,7 +69,7 @@ canvas {
     }
 
 /* PLAYERS SCOREBOARD */
-.all-players {
+.score-board {
     border: 2px solid;
     background-color: var(--white);
     text-align: center;
