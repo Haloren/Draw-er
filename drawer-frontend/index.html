@@ -21,18 +21,12 @@
 
             <form id="new-player" class="new-player">
                 <label for="name"><small>Name:</small></label>
-                <br>
                 <input type="text" name="name">
-                <br>
-                <label for="card"><small>Add Word:</small></label>
-                <br>
-                <input type="text" name="card">
-                <br>
                 <input type="submit" class="add-player" value="Add Player">
             </form>
 
             <div id="score-board" class="score-board">
-                <h1 class="board-title"> Score Board </h1>
+                <h1 id="board-title" class="board-title"> Score Board </h1>
                     <!-- Player Name  Points 🔼🔽 -->
             </div>
 
@@ -56,6 +50,12 @@
             <div class="game-controls">
                 <button id="new-words" class="new-words"> Get New Words </button>
             </div>
+
+            <form id="new-word" class="new-word">
+                <label for="card"><small>Word:</small></label>
+                <input type="text" name="card">
+                <input type="submit" class="add-word" value="Add Word">
+            </form>
 
         </div>
     </main>

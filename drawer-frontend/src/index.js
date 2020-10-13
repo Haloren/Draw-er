@@ -2,7 +2,8 @@ const BASE_URL = "http://localhost:3000"
 const PLAYERS_URL = `${BASE_URL}/players`
 const CARDS_URL = `${BASE_URL}/cards`
 
-const player = document.querySelector("div div h1")
+// const player = document.querySelector("div div h1")
+const player = document.getElementById("board-title")
 
 //GET PLAYERS
 document.addEventListener("DOMContentLoaded", () => loadPlayers())
@@ -26,7 +27,7 @@ const renderPlayers = (playerList) => {
     input.setAttribute("type", "number")
     input.setAttribute("value", "0")
 
-    p.innerHTML = `${playerList.name}`
+    p.innerHTML = playerList.name
     input.innerHTML = "0"
 
     player.appendChild(p)
@@ -92,12 +93,20 @@ let renderCards = (cardList) => {
     div.setAttribute("class", "game-card")
     div2.setAttribute("class", "game-card")
     
-    div.innerHTML = cardList[Math.floor(Math.random() * cardList.length)].content
+    div.innerHTML = `${cardList[Math.floor(Math.random() * cardList.length)].content}` // json[0].player.name 
     div2.innerHTML = cardList[Math.floor(Math.random() * cardList.length)].content
 
     cardsContainer.appendChild(div)
     cardsContainer.appendChild(div2)
 } 
+
+document.getElementById("cards-container").addEventListener('click', function(){
+    document.getElementById("cards-grid").setAttribute("class", "hide")
+    
+    const turnOver = document.createElement("h1")
+    turnOver.innerHTML = "Click to Turn Over"
+    console.log("turn over")
+})
 
 //GET NEW WORDS (re-run renderCards on button click)
 

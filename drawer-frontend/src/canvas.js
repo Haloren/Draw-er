@@ -21,6 +21,7 @@ window.addEventListener('load', () =>{
         context.lineWidth = 5; // THIS CHANGES THE LINE THICKNESS
         context.strokeStyle = "blue"; // THIS CHANGES THE LINE COLOR
         context.lineCap = "round";
+        // console.log(e)
         context.lineTo(e.clientX, e.clientY);
         context.stroke();        
     }

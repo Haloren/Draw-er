@@ -43,13 +43,13 @@ canvas {
     z-index: 5;
 }
 
-/* NEW PLAYER */
-.new-player {
+/* NEW PLAYER & NEW WORD */
+.new-player, .new-word {
     text-align: center;
     margin: 2px;
     padding: 3px;
 }
-.add-player {
+.add-player, .add-word {
     margin: 5px;
     padding: 10px;
     font-size: 1rem;
@@ -175,6 +175,10 @@ main.reset-time {
     }
 
 /* DISPLAYED GAME CARDS */
+.hide {
+    display: none;
+}
+
 .cards-container {
     height: 200px;
     width: 400px;
