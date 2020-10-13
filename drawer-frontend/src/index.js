@@ -101,8 +101,6 @@ let renderCards = (cardList) => {
 
 //GET NEW WORDS (re-run renderCards on button click)
 
-//END GAME (destroy all players except first Player "Drawer")
-
 //HELP & GAME RULES
 const showRules = () => {
     let hide = document.getElementById("showRules");
