@@ -175,10 +175,6 @@ main.reset-time {
     }
 
 /* DISPLAYED GAME CARDS */
-.hide {
-    display: none;
-}
-
 .cards-container {
     height: 200px;
     width: 400px;

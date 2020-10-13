@@ -100,13 +100,15 @@ let renderCards = (cardList) => {
     cardsContainer.appendChild(div2)
 } 
 
-document.getElementById("cards-container").addEventListener('click', function(){
-    document.getElementById("cards-grid").setAttribute("class", "hide")
-    
-    const turnOver = document.createElement("h1")
-    turnOver.innerHTML = "Click to Turn Over"
-    console.log("turn over")
-})
+// Hide and Show Word Cards
+const showWords  = () => {
+    let hide = document.getElementById("cards-grid");
+    if(hide.style.display === "none") {
+        hide.style.display = "";
+    } else {
+        hide.style.display = "none"
+    }
+}
 
 //GET NEW WORDS (re-run renderCards on button click)
 
