@@ -1,7 +1,8 @@
 const BASE_URL = "http://localhost:3000"
 const PLAYERS_URL = `${BASE_URL}/players`
+const CARDS_URL = `${BASE_URL}/cards`
 
-const player = document.querySelector("div div h2")
+const player = document.querySelector("div div h1")
 
 //GET PLAYERS
 document.addEventListener("DOMContentLoaded", () => loadPlayers())
@@ -18,12 +19,18 @@ const loadPlayers = () => {
 }
 const renderPlayers = (playerList) => {
     const p = document.createElement("p")
+    const input = document.createElement("input")
     
     p.setAttribute("class", "player")
+    input.setAttribute("class", "points")
+    input.setAttribute("type", "number")
+    input.setAttribute("value", "0")
 
-    p.innerHTML = `${playerList.name} - ${playerList.points}`
+    p.innerHTML = `${playerList.name}`
+    input.innerHTML = "0"
 
     player.appendChild(p)
+    p.appendChild(input)
 }
 
 //TIMER & CONTROLS
@@ -44,7 +51,6 @@ function timer(){
     }
     return
 }
-
 function resetTimer(){
     clearInterval(startTimer);
 }
@@ -58,11 +64,10 @@ start.addEventListener('click', function(){
     }
     startCountDown()
 })
-
 reset.addEventListener('click', function(){
     console.log("reset")
-    min.value = 01;
-    sec.value = 59;
+    min.value = 00;
+    sec.value = 00;
     resetTimer()
 })
 

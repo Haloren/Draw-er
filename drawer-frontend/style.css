@@ -73,8 +73,18 @@ canvas {
 }
 
 .player {
+    margin-left: auto;
+    margin-right: auto;
     margin: 0;
     padding: 0;
+    font-size: x-large;
+}
+.points {
+    margin: 0;
+    text-align: center;
+    border: none;
+    background-color: var(--white);
+    font-size: 1.5rem;
 }
 
 /* TIMER */
