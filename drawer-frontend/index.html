@@ -32,17 +32,19 @@
             </form>
 
             <div id="score-board" class="score-board">
-                <h1> Score Board </h1>
+                <h1 class="board-title"> Score Board </h1>
                 <h2><!-- Player Name 🔽 Points 🔼 --></h2>
             </div>
 
             <div id="timer" class="timer">
-                <h1> 2 : 00 </h1>
+                <input id="minutes" type="number" max="60" min="0" value="0"></input>
+                <p id="semi-colon"> :</p> 
+                <input id="seconds" type="number" max="60" min="0" value="0"></input>
             </div>
 
             <div class="timer-controls">
                 <button id="start-btn" class="start-btn"> Start </button>
-                <button id="stop-btn" class="stop-btn"> Stop </button>
+                <button id="reset-btn" class="reset-btn"> Reset </button>
             </div>
 
             <div id="cards-container" class="cards-container">

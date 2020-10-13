@@ -19,24 +19,53 @@ const loadPlayers = () => {
 const renderPlayers = (playerList) => {
     const p = document.createElement("p")
     
+    p.setAttribute("class", "player")
+
     p.innerHTML = `${playerList.name} - ${playerList.points}`
 
     player.appendChild(p)
 }
 
 //TIMER & CONTROLS
-const startButton = document.getElementById("start-btn")
-const stopButton = document.getElementById("stop-btn")
+const start = document.getElementById("start-btn")
+const reset = document.getElementById("reset-btn")
+const min = document.getElementById("minutes")
+const sec = document.getElementById("seconds")
 
-startButton.addEventListener('click', startTimer)
-function startTimer() {
+function timer(){
+    if(min.value == 0 && sec.value == 0){
+        min.value = 0;
+        sec.value = 0;
+    } else if(sec.value != 0){
+        sec.value--;
+    } else if(min.value != 0 && sec.value == 0){
+        sec.value = 59;
+        min.value--;
+    }
+    return
+}
+
+function resetTimer(){
+    clearInterval(startTimer);
+}
+
+start.addEventListener('click', function(){
     console.log("start")
-}
+    function startCountDown(){
+        startTimer = setInterval(function() {
+            timer();
+        }, 1000)
+    }
+    startCountDown()
+})
 
-stopButton.addEventListener('click', stopTimer)
-function stopTimer() {
-    console.log("stop")
-}
+reset.addEventListener('click', function(){
+    console.log("reset")
+    min.value = 01;
+    sec.value = 59;
+    resetTimer()
+})
+
 
 //GAME CARDS (cards-container)
 const cardsContainer = document.getElementById("cards-grid")
