@@ -38,6 +38,9 @@ function stopTimer() {
     console.log("stop")
 }
 
+//GAME CARDS (cards-container)
+const cardsContainer = document.getElementById("cards-grid")
+
 //GET WORD CARDS
 document.addEventListener("DOMContentLoaded", () => loadCards())
 
@@ -48,20 +51,17 @@ const loadCards = () => {
         json.forEach(card => renderCards(card))
     })
 }
-const renderCards = (cardList) => {
-    console.log(cardList)
+let renderCards = (cardList) => {
+    const div = document.createElement("div")
+
+    div.setAttribute("class", "game-card")
+
+    div.innerHTML = cardList.cards[Math.floor(Math.random() * cardList.cards.length)].content
+
+    cardsContainer.appendChild(div)
 } 
 
-//GAME CARDS (cards-container)
-const cardsContainer = document.getElementById("cards-container")
-
-//Math for random - cardList[Math.floor(Math.random() * cardList.length)];
-let randomCardOne = "Word One"
-let randomCardTwo = "Word Two"
-let cardOne = document.getElementById("card-one")
-cardOne.innerHTML = randomCardOne 
-let cardTwo = document.getElementById("card-two")
-cardTwo.innerHTML = randomCardTwo
+//Math for random - [Math.floor(Math.random() * cardList.cards.length)];
 
 
 //GET NEW WORDS 
