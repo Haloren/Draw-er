@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Player.delete_all
-Player.create(name: 'Drawer', points: 0)
+Player.create(name: 'Drawer')
 
 Card.delete_all
 words = [
