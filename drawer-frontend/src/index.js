@@ -41,9 +41,7 @@ const renderPlayer = (playerList) => {
     p.appendChild(button)
     p.appendChild(input)
 }
-
 //CREATE PLAYER
-
 const createPlayer = (e) => {
     e.preventDefault()
     const configObj = {
@@ -52,20 +50,26 @@ const createPlayer = (e) => {
             'Content-Type': 'application/json',
             'Accept':'application/json'
         },
-        body: JSON.stringify({player_id: 1})//e.target.dataset is empty?
+        //e.target.dataset is empty?
     }
-
     // fetch(PLAYERS_URL, configObj)
     // .then(resp = resp.json())
     // .then(json =>
     //       json.message ? alert(json.message) : renderPlayer(json)
     // )
 }
-
 //DELETE PLAYER
-const deletePlayer = () => {
+const deletePlayer = (e) => {
     e.preventDefault()
-
+    const configObj = {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept':'application/json'
+        }
+    }
+    // fetch(`${PLAYERS_URL}/${e.target.dataset}`, configObj)
+    //     e.target.parentElement.remove()
 }
 
 //TIMER & CONTROLS
@@ -109,7 +113,6 @@ reset.addEventListener('click', function(){
 
 //GAME CARDS (cards-container)
 const cardsContainer = document.getElementById("cards-grid")
-
 //GET WORD CARDS
 document.addEventListener("DOMContentLoaded", () => loadCards())
 
@@ -132,10 +135,11 @@ let renderCards = (cardList) => {
     div.innerHTML = `${cardList[Math.floor(Math.random() * cardList.length)].content}` // json[0].player.name 
     div2.innerHTML = cardList[Math.floor(Math.random() * cardList.length)].content
 
+    document.getElementById("add-word").addEventListener('click', addWord)
+
     cardsContainer.appendChild(div)
     cardsContainer.appendChild(div2)
 } 
-
 // Hide and Show Word Cards
 const showWords  = () => {
     let hide = document.getElementById("cards-grid");
@@ -145,7 +149,6 @@ const showWords  = () => {
         hide.style.display = "none"
     }
 }
-
 //GET NEW WORDS (clear & re-run loadCards on button click)
 const newWords = document.getElementById("new-words")
 
@@ -155,6 +158,24 @@ newWords.addEventListener('click', function(){
     document.getElementById("game-card2").replaceWith()
     loadCards()
 })
+
+//ADD WORD
+const addWord = (e) => {
+    e.preventDefault()
+    const configObj = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept':'application/json'
+        },
+        //e.target.dataset is empty?
+    }
+    // fetch(CARDS_URL, configObj)
+    // .then(resp = resp.json())
+    // .then(json =>
+    //       json.message ? alert(json.message) : renderCards(json)
+    // )
+}
 
 //HELP & GAME RULES
 const showRules = () => {

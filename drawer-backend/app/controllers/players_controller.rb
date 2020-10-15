@@ -11,14 +11,13 @@ class PlayersController < ApplicationController
     end
 
     def create
-       player = Player.new(player_params)
-       
-       byebug
-       if player.save
-            render json: player
-       else
-            render json: {message: "An error occured"}
-       end
+        byebug 
+        player = Player.new(player_params)
+        if player.save
+             render json: player
+        else
+             render json: {message: "An error occured"}
+        end
     end
 
     def destroy
