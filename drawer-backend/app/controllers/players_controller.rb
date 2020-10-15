@@ -11,21 +11,26 @@ class PlayersController < ApplicationController
     end
 
     def create
-        byebug
-        @player = Player.new(character_parmas)
-        @player.game_id = session[:game_id]
-
+       player = Player.new(player_params)
+       
+       byebug
+       if player.save
+            render json: player
+       else
+            render json: {message: "An error occured"}
+       end
     end
 
     def destroy
         player = Player.all.find_by(id: params[:id])
         player.destroy
-        render json: player, include: [:cards]
+        render json: {message: "Mess with the best, die like the rest"}
+        # render json: player, include: [:cards]
     end
 
     private
 
     def player_params
-        params.require(:player).permit(:name, )
+        params.require(:player).permit(:name, :game_id)
     end
 end

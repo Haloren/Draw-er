@@ -43,6 +43,10 @@ canvas {
     z-index: 5;
 }
 
+input {
+    font-size: x-large;
+}
+
 /* NEW PLAYER & NEW WORD */
 .new-player, .new-word {
     text-align: center;
@@ -51,10 +55,9 @@ canvas {
 }
 .add-player, .add-word {
     margin: 5px;
-    padding: 10px;
-    font-size: 1rem;
+    font-size: x-large;
 }
-    .add-player:hover {
+    .add-player:hover, .add-word:hover {
         cursor: pointer;
         background-color: var(--black);
         color: var(--white);
@@ -73,12 +76,17 @@ canvas {
 }
 
 .player {
-    margin-left: auto;
-    margin-right: auto;
-    margin: 0;
+    text-align: left;
+    margin: 0px 5px 0px 20px;
     padding: 0;
     font-size: x-large;
 }
+.delete-player {
+    margin: 10px;
+}
+    .delete-player:hover {
+        background-color: var(--red);
+    }
 .points {
     margin: 0;
     text-align: center;
@@ -163,14 +171,16 @@ main.reset-time {
     margin: 5px;
     padding: 10px;
 }
-.new-words, .end-game {
+.new-words {
     border: var(--white);
     background-color: var(--white);
     color: var(--black);
     outline: none;
     box-shadow: 0px 2px 2px 0px;
+    font-size: x-large;
+    padding: 0px 10px;
 }
-    .new-words:hover, .end-game:hover {
+    .new-words:hover {
         color: var(--blue);
     }
 
@@ -178,7 +188,8 @@ main.reset-time {
 .cards-container {
     height: 200px;
     width: 400px;
-    padding: 0 10px 0 10px;
+    padding: 0 10px;
+    margin: auto;
     background-color: var(--white);
     border-radius: 5px;
     text-align: center;
