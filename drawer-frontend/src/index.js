@@ -15,23 +15,53 @@ const loadPlayers = () => {
     //     console.log(json)
     // })
     .then(json => {
-        json.forEach(player => renderPlayers(player))
+        json.forEach(player => renderPlayer(player))
     })
 }
-const renderPlayers = (playerList) => {
+const renderPlayer = (playerList) => {
     const p = document.createElement("p")
     const input = document.createElement("input")
+    const button = document.createElement("button")
     
     p.setAttribute("class", "player")
+    p.innerHTML = playerList.name
+    input.innerHTML = "0"
+
     input.setAttribute("class", "points")
     input.setAttribute("type", "number")
     input.setAttribute("value", "0")
 
-    p.innerHTML = playerList.name
-    input.innerHTML = "0"
+    button.setAttribute("class", "delete-player")
+    button.innerHTML = "Delete"
+    button.addEventListener('click', deletePlayer)
 
     player.appendChild(p)
+    p.appendChild(button)
     p.appendChild(input)
+}
+
+//CREATE PLAYER
+const createPlayer = (e) => {
+    e.preventDefault()
+    const configObj = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept':'application/json'
+        },
+        body: JSON.stringify({player_id: e.target.dataset})
+    }
+
+    fetch(PLAYERS_URL, configObj)
+    .then(resp = resp.json())
+    .then(json =>
+          json.message ? alert(json.message) : renderPlayer(json)
+    )
+}
+
+//DELETE PLAYER
+const deletePlayer = () => {
+
 }
 
 //TIMER & CONTROLS
