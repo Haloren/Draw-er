@@ -34,7 +34,7 @@ const renderPlayer = (playerList) => {
     button.setAttribute("class", "delete-player")
     button.innerHTML = "☠️"
     
-    document.getElementById("add-player").addEventListener('click', createPlayer)
+    document.getElementById("new-player").addEventListener('submit', createPlayer)
     button.addEventListener('click', deletePlayer)
     
     player.appendChild(p)
@@ -50,13 +50,13 @@ const createPlayer = (e) => {
             'Content-Type': 'application/json',
             'Accept':'application/json'
         },
-        //e.target.dataset is empty?
+        body: JSON.stringify({name: e.target.name.value})
     }
-    // fetch(PLAYERS_URL, configObj)
-    // .then(resp = resp.json())
-    // .then(json =>
-    //       json.message ? alert(json.message) : renderPlayer(json)
-    // )
+    fetch(PLAYERS_URL, configObj)
+    .then(resp = resp.json())
+    .then(json =>
+          json.message ? alert(json.message) : renderPlayer(json)
+    )
 }
 //DELETE PLAYER
 const deletePlayer = (e) => {
